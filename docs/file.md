@@ -14,6 +14,7 @@ PROGRAM file_write
       CLOSE(unit=1)
 END PROGRAM file_write
 ```
+Note that `unit=0, 5 and 6` are reserved. Do not use them to identify files in your programs. 
 
 Reading from file: we will read the data from file that is generated in the above example. 
 ```

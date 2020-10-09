@@ -8,7 +8,7 @@ PROGRAM cm2inch
 
       REAL :: cm, inch
     
-      PRINT *, "Enter length in centimeter"
+      PRINT "(a,$)", "Enter length in centimeter = "
       READ *, cm
       
       inch = cm / 2.54

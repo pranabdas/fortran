@@ -9,7 +9,7 @@ PROGRAM circ
     REAL :: r, circum
     REAL, PARAMETER :: pi = 3.14159
 
-    PRINT *, "Enter radius of the circle:"
+    WRITE(*, "(a)", advance='NO') "Enter radius of the circle: "
     READ *, r
 
     circum = 2 * pi * r

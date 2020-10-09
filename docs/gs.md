@@ -1,5 +1,5 @@
 ### Setting up Fortran environment 
-I will be using UNIX/Linux environment for programming. If you are on Windows 10, you may consider using [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10){:target="_blank"}. We will be using [gfortran](https://gcc.gnu.org/fortran/){:target="_blank"} to compile our program. Install gfortran in your computer. 
+FORTRAN is often used in high performance scientific computing. I will be working on UNIX/Linux for this tutorials. If you are on Windows 10, you may consider using [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10){:target="_blank"}. We will be using [gfortran](https://gcc.gnu.org/fortran/){:target="_blank"} to compile our programs. Install gfortran in your computer. 
 
 On Ubuntu/Debian: 
 ```
@@ -19,4 +19,9 @@ gfortran source-file.f90
 It will create a binary `a.out` in the same directory as the source code, which can be executed by:
 ```
 ./a.out
+```
+
+If you would like to specify the name of the executable instead of default `a.out`: 
+```
+gfortran source-file.f90 -o XYapp
 ```

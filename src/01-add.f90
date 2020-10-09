@@ -8,12 +8,12 @@ PROGRAM add
 
       INTEGER :: a, b, output
     
-      PRINT *, "Input a="
+      PRINT *, "Input a ="
       READ *, a
-      PRINT *, "Input b="
+      PRINT *, "Input b ="
       READ *, b
       
       output = a + b
 
-      PRINT *, "Output:", a, "+", b, "=", output
+      PRINT*, "Output: ", a, "+", b, "=", output
 END PROGRAM add
