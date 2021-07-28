@@ -1,0 +1,84 @@
+---
+title: Fortran basics
+---
+import CodeBlock from '@theme/CodeBlock';
+
+We will learn by doing. Let us start by writing a simple program that asks for
+some user input, performs some arithmetic operations, and returns a result.
+
+import add from '!!raw-loader!/src/01_add.f90';
+
+<CodeBlock className="fortran" title="src/01_add.f90">{add}</CodeBlock>
+
+:::info
+
+You can write keywords in both lowercase or uppercase. For example, `implicit`
+and `IMPLICIT` are the same. Previously, f77 only allowed uppercase letters.
+
+:::
+
+We store the above code in a file named: `01-add.f90`. We compile and execute
+the code as follows:
+```bash
+gfortran 01-add.f90
+./a.out
+```
+
+Now let's write another simple program that converts centimeter to inches:
+
+import cm2inch from '!!raw-loader!/src/02_cm2inch.f90';
+
+<CodeBlock className="fortran" title="src/02_cm2inch.f90">{cm2inch}</CodeBlock>
+
+Calculate the circumference of a circle given the diameter:
+
+import circ from '!!raw-loader!/src/03_circ.f90';
+
+<CodeBlock className="fortran" title="src/03_circ.f90">{circ}</CodeBlock>
+
+Formatting output:
+
+import format from '!!raw-loader!/src/04_format.f90';
+
+<CodeBlock className="fortran" title="src/04_format.f90">{format}</CodeBlock>
+
+:::note
+
+A comment starts with `!`. The continuation of a single statement to the next
+line is done by `&` at the end of previous line.
+
+:::
+
+### Names
+The names must not be longer than 31 characters, must be composed of
+alphanumeric characters and underscores, first character must be a letter. Names
+are case insensitive.
+
+### Types
+- Integer (example: -2, -1, 0, 1, 2, ...)
+- Real (example: 3.14, -12.5)
+- Complex (example: `2.0 - 1.5i`)
+- Logical (`.true.`, `.false.`)
+- Character: The length of a string can be specified by `len`.
+
+### Variables
+```fortran
+integer :: no_of_students
+real :: radius, circumference
+complex :: cx
+logical :: done
+character (len=20) :: name
+```
+
+### Constants
+```fortran
+real, parameter :: pi = 3.14159
+```
+
+### Implicit typing
+In Fortran variables need not to be declared beforehand, but this practice
+should be avoided by `implicit none` at the top of program. If a variable is not
+declared, the first letter of its name determines its type. If the name starts
+with i, j, k, l, m, n, it is considered integer, otherwise real.
+
+

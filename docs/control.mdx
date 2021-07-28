@@ -1,0 +1,26 @@
+---
+title: Logical expression and control
+sidebar_label: Logical expression
+---
+import CodeBlock from '@theme/CodeBlock';
+
+Notation | Meaning
+:------: | :-----------------------
+.lt.	 | less than
+.gt.	 | greater than
+.le.	 | less than or equal to
+.ge.	 | greater than or equal to
+.eq.	 | equals
+.ne.	 | not equal to
+.and.	 | and
+.or.	 | or
+.not.	 | not
+.xor.	 | "exclusive" or
+.eqv.	 | equivalent
+.neqv.   | not equivalent
+
+Calculate square root of real positive numbers:
+
+import sq_root from '!!raw-loader!/src/06_sq_root.f90';
+
+<CodeBlock className="fortran" title="src/06_sq_root.f90">{sq_root}</CodeBlock>

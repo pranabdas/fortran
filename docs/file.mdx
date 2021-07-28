@@ -1,0 +1,25 @@
+---
+title: File Input / Output
+sidebar_label: File I/O
+---
+import CodeBlock from '@theme/CodeBlock';
+
+Here we will generate some data and write it to a file:
+
+import file_write from '!!raw-loader!/src/08_file_write.f90';
+
+<CodeBlock className="fortran" title="src/08_file_write.f90">{file_write}</CodeBlock>
+
+:::info
+
+Note that `unit=0, 5, and 6` are reserved. Do not use them to identify files in
+your programs.
+
+:::
+
+Reading from file: we will read the data from file that is generated in the
+above example.
+
+import file_read from '!!raw-loader!/src/09_file_read.f90';
+
+<CodeBlock className="fortran" title="src/09_file_read.f90">{file_read}</CodeBlock>
