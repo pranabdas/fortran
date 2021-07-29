@@ -4,11 +4,12 @@ module.exports = {
       type: "category",
       label: "List of Pages",
       items: [
-        "gs",
+        "setup",
         "basics",
         "array",
         "control",
         "loop",
+        "integration",
         "file",
         "resources",
         "license",

@@ -1,0 +1,17 @@
+---
+title: "Numerical integration: Trapezoidal method"
+sidebar_label: Integration
+---
+import CodeBlock from '@theme/CodeBlock';
+
+We will calculate the area under the curve $f(x)$ within the bounds $x=a$ and
+$x=b$. We will devide the curve into $n$ trapezoids with width $h=(b-a)/n$. Area
+under the curve:
+
+$$
+A_n = h \left[\frac{f(a)}{2} + f(a+h) + f(a+2h) + \cdots + \frac{f(b)}{2}\right]
+$$
+
+import trapezoid from '!!raw-loader!/src/10_trapezoid.f90';
+
+<CodeBlock className="fortran" title="src/10_trapezoid.f90">{trapezoid}</CodeBlock>

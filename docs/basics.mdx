@@ -1,5 +1,5 @@
 ---
-title: Fortran basics
+title: Getting started
 ---
 import CodeBlock from '@theme/CodeBlock';
 
@@ -45,12 +45,20 @@ import format from '!!raw-loader!/src/04_format.f90';
 :::note
 
 A comment starts with `!`. The continuation of a single statement to the next
-line is done by `&` at the end of previous line.
+line is done by `&` at the end of previous line. If you need to break a very
+long character string, use the concatenation operator `//`.
+
+```fortran
+PRINT *, "My name is " // &
+  "Pranab."
+```
+
+A signle statement can be at max 256 lines long.
 
 :::
 
 ### Names
-The names must not be longer than 31 characters, must be composed of
+The names must not be longer than 63 characters, must be composed of
 alphanumeric characters and underscores, first character must be a letter. Names
 are case insensitive.
 
@@ -81,4 +89,32 @@ should be avoided by `implicit none` at the top of program. If a variable is not
 declared, the first letter of its name determines its type. If the name starts
 with i, j, k, l, m, n, it is considered integer, otherwise real.
 
+### Intrinsic functions
+Functions | Description
+--------- | -----------
+abs(x)    | absolute value of a numerical argument
+complx(x, y) | converts to complex
+floor(x)  | greatest integer ≤ x `floor(3.2)=3`, `floor(-4.9)=-5`
+int(x)    | converts to ingeter. `int(-4.9)=-4`, `int(0.2)=0`, `int(3.3)=3`
+nint(x [, ikind]) | rounds to nearest integer. Optional `ikind` for precision
+real(x [, ikind]) | converts to real
+mod(a, p) | `a - int(a/p)*p`
+modulo(a,p) | `a - floor(a/p)*p`
 
+### Mathematical functions
+Functions | Description
+--------- | -----------
+sin       | sine function
+asin      | inverse sine
+sinh      | sine hyperbolic
+cos       | cosine function
+acos      | inverse cosine
+cosh      | cos hyperbolic
+tan       | tangent function
+atan      | inverse tan
+atan2     | inverse tangent for complex numbers
+tanh      | tan hyperbolic
+sqrt      | square root
+exp       | exponential
+log       | natural logarithm
+log10     | common logarithm
