@@ -1,0 +1,53 @@
+---
+title: Procedures
+---
+import CodeBlock from '@theme/CodeBlock';
+
+There are two types of procedures in Fortran: subroutines and functions. All
+procedures should be placed in a module or after the `contains` keyword in a
+main program.
+
+## Subroutine
+First we write the subroutines in a module:
+
+import add_module from '!!raw-loader!/src/12_add_module.f90';
+
+<CodeBlock className="fortran" title="src/12_add_module.f90">{add_module}</CodeBlock>
+
+Now write our porgram:
+
+import add from '!!raw-loader!/src/12.1_add.f90';
+
+<CodeBlock className="fortran" title="src/12.1_add.f90">{add}</CodeBlock>
+
+Compile and execute:
+```bash
+gfortran -c 12_add_module.f90
+gfortran 12.1_add.f90 12_add_module.o
+./a.out
+```
+
+## Function
+We want to print a table of $x$ vs $f(x)$ where:
+
+$$
+f(x) = \left(1 + \frac{1}{x}\right)^x
+$$
+
+import function_module from '!!raw-loader!/src/13_function_module.f90';
+
+<CodeBlock className="fortran" title="src/13_function_module.f90">{function_module}</CodeBlock>
+
+import function_table from '!!raw-loader!/src/13.1_function_table.f90';
+
+<CodeBlock className="fortran" title="src/13.1_function_table.f90">{function_table}</CodeBlock>
+
+Sample output:
+```fortran
+     1.0  2.0000
+    10.0  2.5937
+   100.0  2.7048
+  1000.0  2.7171
+ 10000.0  2.7186
+100000.0  2.7220
+```

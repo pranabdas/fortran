@@ -1,0 +1,8 @@
+MODULE const_module
+  IMPLICIT none
+  PRIVATE
+
+  REAL, PUBLIC, PARAMETER :: pi = 3.14159265
+  REAL, PUBLIC, PARAMETER :: e  = 2.71828182
+
+END MODULE const_module

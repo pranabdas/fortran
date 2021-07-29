@@ -11,6 +11,8 @@ module.exports = {
         "loop",
         "integration",
         "file",
+        "modules",
+        "procedures",
         "resources",
         "license",
       ],
