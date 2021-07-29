@@ -8,7 +8,7 @@ PROGRAM sq_root
   PRINT *, "Input = "
   READ *, input
 
-  IF (input .GE. 0) THEN
+  IF (input > 0) THEN
     output = SQRT(input)
     PRINT *, "Square root of ", input, "= ", output
   ELSE

@@ -4,22 +4,33 @@ sidebar_label: Logical expression
 ---
 import CodeBlock from '@theme/CodeBlock';
 
-Notation | Meaning
-:------: | :-----------------------
-.lt.	 | less than
-.gt.	 | greater than
-.le.	 | less than or equal to
-.ge.	 | greater than or equal to
-.eq.	 | equals
-.ne.	 | not equal to
-.and.	 | and
-.or.	 | or
-.not.	 | not
-.xor.	 | "exclusive" or
-.eqv.	 | equivalent
-.neqv.   | not equivalent
+Operators | Meaning
+:-------: | :-----------------------
+.lt.	  | less than
+.gt.	  | greater than
+.le.	  | less than or equal to
+.ge.	  | greater than or equal to
+.eq.	  | equals
+.ne.	  | not equal to
+.and.	  | and
+.or.	  | or
+.not.	  | not
+.xor.	  | "exclusive" or
+.eqv.	  | equivalent
+.neqv.    | not equivalent
 
-Calculate square root of real positive numbers:
+F90 introduced follwoing simplified notation for the relational operators:
+
+Operators | Meaning
+:-------: | :-----------------------
+<   	  | less than
+>         | greater than
+<=        | less than or equal to
+>=        | greater than or equal to
+==        | equal to
+/=        | not equal to
+
+**Example:** Calculate square root of real positive numbers:
 
 import sq_root from '!!raw-loader!/src/06_sq_root.f90';
 
