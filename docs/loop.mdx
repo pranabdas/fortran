@@ -10,3 +10,55 @@ Calculate factorial:
 import factorial from '!!raw-loader!/src/07_factorial.f90';
 
 <CodeBlock className="fortran" title="src/07_factorial.f90">{factorial}</CodeBlock>
+
+We can have a step size in a DO loop with a third parameter:
+```fortran
+DO i = 1, 100, 10
+  ! do something
+END DO
+```
+
+Exit a loop based on condition:
+```fortran
+DO i = 1, 10
+  CALL random_number(x)
+  IF (x > 0.5) EXIT
+END DO
+```
+
+Skip rest of current iteration with cycle:
+```fortran
+DO i = 1, 10
+  IF (iseven(i)) CYCLE
+  ! do something with the odd numbers
+END DO
+```
+
+Implied DO loops:
+```fortran
+PRINT *, (i, i = 1, 10)
+```
+
+You can iterate multiple expressions:
+```fortran
+PRINT *, (i, i**2, i = 0, 10)
+```
+
+With nested loops:
+```fortran
+PRINT *, ((i*j, i = 1, 10), j = 1, 10)
+```
+
+**DO concurrent:** if the iterations of a DO loop are independent, we can use the
+CONCURRENT keyword to indicate, the loop can be iterated in parallel:
+```fortran
+DO CONCURRENT (i = 1, 10)
+  ! do something
+END DO
+```
+
+## DO WHILE
+
+import print_even_numbers from '!!raw-loader!/src/07_print_even_numbers.f90';
+
+<CodeBlock className="fortran" title="src/07_print_even_numbers.f90">{print_even_numbers}</CodeBlock>

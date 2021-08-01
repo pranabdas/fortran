@@ -1,6 +1,6 @@
 ---
 title: Logical expression and control
-sidebar_label: Logical expression
+sidebar_label: Logical control
 ---
 import CodeBlock from '@theme/CodeBlock';
 
@@ -19,7 +19,7 @@ Operators | Meaning
 .eqv.	  | equivalent
 .neqv.    | not equivalent
 
-F90 introduced follwoing simplified notation for the relational operators:
+F90 introduced following simplified notation for the relational operators:
 
 Operators | Meaning
 :-------: | :-----------------------
@@ -30,8 +30,23 @@ Operators | Meaning
 ==        | equal to
 /=        | not equal to
 
-**Example:** Calculate square root of real positive numbers:
+### IF condition
+Calculate square root of real positive numbers:
 
 import sq_root from '!!raw-loader!/src/06_sq_root.f90';
 
 <CodeBlock className="fortran" title="src/06_sq_root.f90">{sq_root}</CodeBlock>
+
+### Multi-way IFs
+
+import multi_way_if from '!!raw-loader!/src/06_multi_way_if.f90';
+
+<CodeBlock className="fortran" title="src/06_multi_way_if.f90">{multi_way_if}</CodeBlock>
+
+Notice also the `STOP` keyword in above example.
+
+### Select case
+
+import select_case from '!!raw-loader!/src/06_select_case.f90';
+
+<CodeBlock className="fortran" title="src/06_select_case.f90">{select_case}</CodeBlock>

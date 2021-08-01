@@ -14,16 +14,16 @@ import add_module from '!!raw-loader!/src/12_add_module.f90';
 
 <CodeBlock className="fortran" title="src/12_add_module.f90">{add_module}</CodeBlock>
 
-Now write our porgram:
+Now write our program:
 
-import add from '!!raw-loader!/src/12.1_add.f90';
+import add from '!!raw-loader!/src/12_add.f90';
 
-<CodeBlock className="fortran" title="src/12.1_add.f90">{add}</CodeBlock>
+<CodeBlock className="fortran" title="src/12_add.f90">{add}</CodeBlock>
 
 Compile and execute:
 ```bash
 gfortran -c 12_add_module.f90
-gfortran 12.1_add.f90 12_add_module.o
+gfortran 12_add.f90 12_add_module.o
 ./a.out
 ```
 
@@ -38,9 +38,9 @@ import function_module from '!!raw-loader!/src/13_function_module.f90';
 
 <CodeBlock className="fortran" title="src/13_function_module.f90">{function_module}</CodeBlock>
 
-import function_table from '!!raw-loader!/src/13.1_function_table.f90';
+import function_table from '!!raw-loader!/src/13_function_table.f90';
 
-<CodeBlock className="fortran" title="src/13.1_function_table.f90">{function_table}</CodeBlock>
+<CodeBlock className="fortran" title="src/13_function_table.f90">{function_table}</CodeBlock>
 
 Sample output:
 ```fortran
@@ -51,3 +51,35 @@ Sample output:
  10000.0  2.7186
 100000.0  2.7220
 ```
+
+In contrast to subroutines, functions must provide a return value.
+
+## Pure procedures and side effects
+Side effects are the change in status of a program when a procedure is executed
+other than computing a value to return, such as changing a variable declared in
+the program or module above the `contains` statement.
+
+One can indicate whether a function or subroutine is pure or has side effects by
+using the keywords `pure` and `impure`, respectively.
+
+## Interface blocks
+Interface block is used to provide necessary information to the calling program
+whether the call is correct. It basically consists of the procedure without the
+executable code, and declaration of local variables.
+
+## Numerical integration II
+We will improve the [numerical integration](./integration.mdx) code we have
+written earlier. Previously we had the integration function hard coded, now we
+will pass it as argument from the calling program and use separate module for
+the calculation.
+
+First we write our executable code in a module:
+
+import integration_module from '!!raw-loader!/src/14_integration_module.f90';
+
+<CodeBlock className="fortran" title="src/14_integration_module.f90">{integration_module}</CodeBlock>
+
+import integration from '!!raw-loader!/src/14_integration.f90';
+
+<CodeBlock className="fortran" title="src/14_integration.f90">{integration}</CodeBlock>
+

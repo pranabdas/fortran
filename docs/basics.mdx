@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Basics
 ---
 import CodeBlock from '@theme/CodeBlock';
 
@@ -12,8 +12,12 @@ import add from '!!raw-loader!/src/01_add.f90';
 
 :::info
 
-You can write keywords in both lowercase or uppercase. For example, `implicit`
+- You can write keywords in both lowercase or uppercase. For example, `implicit`
 and `IMPLICIT` are the same. Previously, f77 only allowed uppercase letters.
+
+- PROGRAM and file names are not related.
+
+- Names and keywords in FORTRAN are not case sensitive.
 
 :::
 
@@ -42,6 +46,25 @@ import format from '!!raw-loader!/src/04_format.f90';
 
 <CodeBlock className="fortran" title="src/04_format.f90">{format}</CodeBlock>
 
+Example outputs:
+
+```fortran
+WRITE(*, "(I4)") 1234
+1234
+
+WRITE(*, "(I8)") 1234
+    1234
+
+WRITE(*, "(I8.6)") 1234
+  001234
+
+WRITE(*, "(F8.4)") pi
+  3.1416
+
+WRITE(*, "(E12.4)") pi
+  0.3142E+01
+```
+
 :::note
 
 A comment starts with `!`. The continuation of a single statement to the next
@@ -53,7 +76,8 @@ PRINT *, "My name is " // &
   "Pranab."
 ```
 
-A signle statement can be at max 256 lines long.
+A single statement can be at max 256 lines long. Also, you can separate multiple
+statements in a line with semicolon (`;`).
 
 :::
 
@@ -63,8 +87,8 @@ alphanumeric characters and underscores, first character must be a letter. Names
 are case insensitive.
 
 ### Types
-- Integer (example: -2, -1, 0, 1, 2, ...)
-- Real (example: 3.14, -12.5)
+- Integer (example: `-2`, `0`, `10`)
+- Real (example: `3.14`, `1.2E2`, `2.3D-2`. `D` indicates double precision.)
 - Complex (example: `2.0 - 1.5i`)
 - Logical (`.true.`, `.false.`)
 - Character: The length of a string can be specified by `len`.
@@ -75,7 +99,7 @@ integer :: no_of_students
 real :: radius, circumference
 complex :: cx
 logical :: done
-character (len=20) :: name
+character(len=20) :: name
 ```
 
 ### Constants
@@ -83,9 +107,26 @@ character (len=20) :: name
 real, parameter :: pi = 3.14159
 ```
 
+Setting double precision:
+```fortran
+REAL(KIND=KIND(0.0D0)), PARAMETER :: pi =  4 * ATAN(1.0D0)
+
+! or
+REAL(KIND=SELECTED_REAL_KIND(12)), PARAMETER :: pi =  4 * ATAN(1.0D0)
+
+! type conversion
+REAL(KIND=KIND(0.0D0)) :: x
+INTEGER :: y
+y = 1
+x = REAL(y, KIND=KIND(0.0D0))
+
+! integer with 12 significant digits
+INTEGER(KIND=SELECTED_INT_KIND(12)) :: large_int
+```
+
 ### Implicit typing
 In Fortran variables need not to be declared beforehand, but this practice
-should be avoided by `implicit none` at the top of program. If a variable is not
+should be avoided by `IMPLICIT NONE` at the top of program. If a variable is not
 declared, the first letter of its name determines its type. If the name starts
 with i, j, k, l, m, n, it is considered integer, otherwise real.
 
@@ -95,7 +136,7 @@ Functions | Description
 abs(x)    | absolute value of a numerical argument
 complx(x, y) | converts to complex
 floor(x)  | greatest integer ≤ x `floor(3.2)=3`, `floor(-4.9)=-5`
-int(x)    | converts to ingeter. `int(-4.9)=-4`, `int(0.2)=0`, `int(3.3)=3`
+int(x)    | converts to integer. `int(-4.9)=-4`, `int(0.2)=0`, `int(3.3)=3`
 nint(x [, ikind]) | rounds to nearest integer. Optional `ikind` for precision
 real(x [, ikind]) | converts to real
 mod(a, p) | `a - int(a/p)*p`

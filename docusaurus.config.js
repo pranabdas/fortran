@@ -35,6 +35,7 @@ module.exports = {
       },
       items: [
         {
+          to: "/",
           label: "Docs",
           position: "left",
           items: [

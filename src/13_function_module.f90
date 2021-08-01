@@ -11,6 +11,7 @@ MODULE function_module
     REAL, INTENT(IN) :: x
     REAL :: f_result
 
+! SELECTED_REAL_KIND(precision [, range])
     INTEGER, PARAMETER :: kind_needed = selected_real_kind(power + 1)
 
     f_result = (1 + 1 / REAL(x, kind_needed)) ** x

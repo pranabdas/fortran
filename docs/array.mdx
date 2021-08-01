@@ -7,8 +7,44 @@ import array from '!!raw-loader!/src/05_array.f90';
 
 <CodeBlock className="fortran" title="src/05_array.f90">{array}</CodeBlock>
 
+There is intrinsic SIZE function to determine the length of a vector, SIZE(vec).
+Another example where we use implied DO loop to assign an array:
+
+import array2 from '!!raw-loader!/src/05_array2.f90';
+
+<CodeBlock className="fortran" title="src/05_array2.f90">{array2}</CodeBlock>
+
+Dynamic array allocation with ALLOCATABLE:
+```fortran
+INTEGER, DIMENSION(:), ALLOCATABLE :: a
+INTEGER i
+a = [(i, i = 1, 10)]
+```
+
+Assign high dimensional array with RESHAPE:
+```fortran
+a = RESHAPE([1, 2, 3, 4, 5, 6], [2, 3])
+! will produce
+! 1 3 5
+! 2 4 6
+
+a = RESHAPE([1, 2, 3, 4, 5, 6], [2, 3], order=[2, 1])
+! will produce
+! 1 2 3
+! 4 5 6
+```
+
 Matrix multiplication:
 
-import matrix_mult from '!!raw-loader!/src/05.1_matrix_mult.f90';
+import matrix_mult from '!!raw-loader!/src/05_matrix_mult.f90';
 
-<CodeBlock className="fortran" title="src/05.1_matrix_mult.f90">{matrix_mult}</CodeBlock>
+<CodeBlock className="fortran" title="src/05_matrix_mult.f90">{matrix_mult}</CodeBlock>
+
+You can assign all the array element same value by assigning it a scaler value:
+```fortran
+INTEGER, DIMENSION(2, 2) :: a
+a = 1
+! will produce
+! 1 1
+! 1 1
+```
