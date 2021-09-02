@@ -12,19 +12,18 @@ import add from '!!raw-loader!/src/01_add.f90';
 
 :::info
 
-- You can write keywords in both lowercase or uppercase. For example, `implicit`
-and `IMPLICIT` are the same. Previously, f77 only allowed uppercase letters.
+- Variable names and keywords in FORTRAN are not case sensitive. You can write
+keywords in both lowercase or uppercase. For example, `implicit` and `IMPLICIT`
+are the same. Older, f77 specification only allowed uppercase letters.
 
-- PROGRAM and file names are not related.
-
-- Names and keywords in FORTRAN are not case sensitive.
+- PROGRAM name and file name are not related.
 
 :::
 
-We store the above code in a file named: `01-add.f90`. We compile and execute
+We store the above code in a file named: `01_add.f90`. We compile and execute
 the code as follows:
 ```bash
-gfortran 01-add.f90
+gfortran 01_add.f90
 ./a.out
 ```
 

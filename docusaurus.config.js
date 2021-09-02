@@ -2,7 +2,7 @@
 const math = require("remark-math");
 const katex = require("rehype-katex");
 module.exports = {
-  title: "Fortran Programming",
+  title: "Fortran Tutorial",
   tagline: "Learning Fortran Programming",
   url: "https://pranabdas.github.io",
   baseUrl: "/fortran/", // must have a trailing "/"
@@ -10,7 +10,7 @@ module.exports = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "pranabdas", // Usually your GitHub org/user name.
-  projectName: "Fortran", // Usually your repo name.
+  projectName: "fortran", // Usually your repo name.
   themeConfig: {
     prism: {
       theme: require("prism-react-renderer/themes/github"),
@@ -27,7 +27,7 @@ module.exports = {
     //   respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "Fortran Programming",
+      title: "Fortran",
       hideOnScroll: true,
       logo: {
         alt: "Logo",
@@ -65,6 +65,11 @@ module.exports = {
               target: "_self",
             },
             {
+              label: "OpenMX tutorial",
+              to: "https://pranabdas.github.io/openmx/",
+              target: "_self",
+            },
+            {
               label: "Python Tutorial",
               to: "https://pranabdas.github.io/python-tutorial/",
               target: "_self",
@@ -82,10 +87,6 @@ module.exports = {
             {
               label: "Condensed Matter Notes",
               href: "https://pranabdas.github.io/docs/condmat-notes/",
-            },
-            {
-              label: "FullProf Tutorial",
-              href: "https://pranabdas.github.io/docs/fullprof/",
             },
             {
               label: "Javascript Tutorial",
@@ -137,9 +138,9 @@ module.exports = {
   ],
   stylesheets: [
     {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css",
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css",
       type: "text/css",
-      integrity: "sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn",
+      integrity: "sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET",
       crossorigin: "anonymous",
     },
   ],

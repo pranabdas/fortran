@@ -66,20 +66,3 @@ using the keywords `pure` and `impure`, respectively.
 Interface block is used to provide necessary information to the calling program
 whether the call is correct. It basically consists of the procedure without the
 executable code, and declaration of local variables.
-
-## Numerical integration II
-We will improve the [numerical integration](./integration.mdx) code we have
-written earlier. Previously we had the integration function hard coded, now we
-will pass it as argument from the calling program and use separate module for
-the calculation.
-
-First we write our executable code in a module:
-
-import integration_module from '!!raw-loader!/src/14_integration_module.f90';
-
-<CodeBlock className="fortran" title="src/14_integration_module.f90">{integration_module}</CodeBlock>
-
-import integration from '!!raw-loader!/src/14_integration.f90';
-
-<CodeBlock className="fortran" title="src/14_integration.f90">{integration}</CodeBlock>
-
