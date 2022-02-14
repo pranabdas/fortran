@@ -5,14 +5,14 @@ import CodeBlock from '@theme/CodeBlock';
 
 import array from '!!raw-loader!/src/05_array.f90';
 
-<CodeBlock className="language-fortran" title="src/05_array.f90">{array}</CodeBlock>
+<CodeBlock language="fortran" title="src/05_array.f90">{array}</CodeBlock>
 
 There is intrinsic SIZE function to determine the length of a vector, SIZE(vec).
 Another example where we use implied DO loop to assign an array:
 
 import array2 from '!!raw-loader!/src/05_array2.f90';
 
-<CodeBlock className="language-fortran" title="src/05_array2.f90">{array2}</CodeBlock>
+<CodeBlock language="fortran" title="src/05_array2.f90">{array2}</CodeBlock>
 
 Dynamic array allocation with ALLOCATABLE:
 ```fortran
@@ -38,7 +38,7 @@ Matrix multiplication:
 
 import matrix_mult from '!!raw-loader!/src/05_matrix_mult.f90';
 
-<CodeBlock className="language-fortran" title="src/05_matrix_mult.f90">{matrix_mult}</CodeBlock>
+<CodeBlock language="fortran" title="src/05_matrix_mult.f90">{matrix_mult}</CodeBlock>
 
 You can assign all the array element same value by assigning it a scaler value:
 ```fortran

@@ -12,6 +12,9 @@ module.exports = {
       type: "category",
       label: "Coding practice",
       collapsed: true,
+      link: {
+        type: "generated-index",
+      },
       items: [
         "abs-path",
         "integration",

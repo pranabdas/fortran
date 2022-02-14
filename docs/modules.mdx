@@ -9,13 +9,13 @@ example. We store various mathematical and physical constants in a module named
 
 import const_module from '!!raw-loader!/src/11_const_module.f90';
 
-<CodeBlock className="language-fortran" title="src/11_const_module.f90">{const_module}</CodeBlock>
+<CodeBlock language="fortran" title="src/11_const_module.f90">{const_module}</CodeBlock>
 
 Now we write a program that uses the above module:
 
 import circ_area from '!!raw-loader!/src/11_circ_area.f90';
 
-<CodeBlock className="language-fortran" title="src/11_circ_area.f90">{circ_area}</CodeBlock>
+<CodeBlock language="fortran" title="src/11_circ_area.f90">{circ_area}</CodeBlock>
 
 The `PRIVATE` keyword makes sure everything is private otherwise declared as
 `PUBLIC`. Private variables are accessible only to the module, while public
