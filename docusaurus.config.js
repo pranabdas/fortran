@@ -16,6 +16,7 @@ async function config() {
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
+        metadata: [{name: 'theme-color', content: '#006bb3'}],
         prism: {
           theme: require("prism-react-renderer/themes/github"),
           darkTheme: require("prism-react-renderer/themes/nightOwl"),
@@ -135,7 +136,7 @@ async function config() {
             sidebarPath: require.resolve("./sidebars.js"),
             routeBasePath: "/",
             // Please change this to your repo.
-            editUrl: "https://github.com/pranabdas/fortran/blob/master/",
+            editUrl: "https://github.com/pranabdas/fortran/blob/main/",
             remarkPlugins: [math],
             rehypePlugins: [katex],
             // breadcrumbs: false,
@@ -166,7 +167,7 @@ async function config() {
         href: "https://pranabdas.github.io/drive/webfonts/katex/katex.min.css",
         type: "text/css",
         integrity:
-          "sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ",
+          "sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB",
         crossorigin: "anonymous",
       },
     ],
