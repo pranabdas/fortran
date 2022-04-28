@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkfortran_programing=self.webpackChunkfortran_programing||[]).push([[837],{3769:function(n){n.exports=JSON.parse('{"plugin":{"name":"docusaurus-plugin-content-docs","id":"default"}}')}}]);
