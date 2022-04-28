@@ -22,7 +22,12 @@ async function config() {
           darkTheme: require("prism-react-renderer/themes/nightOwl"),
           additionalLanguages: ["fortran", "docker"],
         },
-        hideableSidebar: true,
+        docs: {
+          sidebar: {
+            hideable: true,
+            autoCollapseCategories: true,
+          }
+        },
         colorMode: {
           //   defaultMode: "dark",
           //   switchConfig: {
@@ -107,16 +112,20 @@ async function config() {
               ],
             },
             {
-              to: "https://pranabdas.github.io",
-              label: "About me",
-              position: "left",
-              target: "_self",
-            },
-            {
               href: "https://github.com/pranabdas/fortran",
               position: "right",
               className: "header-github-link",
               "aria-label": "GitHub repository",
+              title: "Visit project repository in GitHub",
+              target: "_self",
+            },
+            {
+              to: "https://pranabdas.github.io",
+              "aria-label": "About me",
+              position: "right",
+              target: "_self",
+              className: "header-homepage-link",
+              title: "Go to Pranab's Homepage",
             },
           ],
         },
@@ -166,9 +175,6 @@ async function config() {
       {
         href: "https://pranabdas.github.io/drive/webfonts/katex/katex.min.css",
         type: "text/css",
-        integrity:
-          "sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB",
-        crossorigin: "anonymous",
       },
     ],
   };

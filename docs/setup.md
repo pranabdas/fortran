@@ -2,6 +2,7 @@
 title: Setting up Fortran
 sidebar_label: Setup
 slug: /
+keywords: ["fortran programming", "scientific programming", "numerical programming", "numerical integration"]
 ---
 
 FORTRAN is optimized for high performance scientific computing. I will be
