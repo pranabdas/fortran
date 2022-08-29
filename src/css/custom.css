@@ -226,3 +226,11 @@ table td, table th {
 a.card:hover {
   border-color: var(--color-secondary);
 }
+
+.theme-admonition a {
+  text-decoration: none;
+}
+
+.theme-admonition a:hover {
+  text-decoration: underline;
+}
