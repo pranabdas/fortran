@@ -5,6 +5,7 @@ module.exports = {
     "array",
     "control",
     "loop",
+    "complex",
     "file",
     "modules",
     "procedures",
@@ -17,6 +18,7 @@ module.exports = {
       },
       items: [
         "abs-path",
+        "hypotenuse",
         "integration",
       ],
     },

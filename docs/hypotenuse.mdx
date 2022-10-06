@@ -1,0 +1,28 @@
+---
+title: "Calculate hypotenuse: example of subroutine"
+sidebar_label: Calculate hypotenuse
+---
+Hypotenuse can be calculated using following formula:
+
+$$
+c = \sqrt{a^2 + b^2}
+$$
+
+import CodeBlock from '@theme/CodeBlock';
+import hypotenuse_subroutine from '!!raw-loader!/src/16_hypotenuse_subroutine.f90';
+
+<CodeBlock language="fortran" title="src/16_hypotenuse_subroutine.f90" showLineNumbers>{hypotenuse_subroutine}</CodeBlock>
+
+Compile the subroutine:
+```bash
+gfortran -c 16_hypotenuse_subroutine.f90
+```
+
+import hypotenuse_program from '!!raw-loader!/src/16_hypotenuse_program.f90';
+
+<CodeBlock language="fortran" title="src/16_hypotenuse_program.f90" showLineNumbers>{hypotenuse_program}</CodeBlock>
+
+Compile main program:
+```bash
+gfortran 16_hypotenuse_program.f90 16_hypotenuse_subroutine.o
+```
