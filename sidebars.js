@@ -20,6 +20,7 @@ module.exports = {
         "abs-path",
         "hypotenuse",
         "integration",
+        "haversine",
       ],
     },
     "resources",
