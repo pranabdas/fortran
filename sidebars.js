@@ -22,6 +22,8 @@ module.exports = {
         "integration",
         "haversine",
         "inner-product",
+        "monte-carlo-pi",
+        "monte-carlo-integration",
       ],
     },
     "resources",

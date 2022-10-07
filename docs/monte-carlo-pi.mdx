@@ -1,0 +1,14 @@
+---
+title: Determine value of pi by Monte Carlo method
+sidebar_label: Monte Carlo method
+---
+We will approximate value of $\pi$ by Monte Carlo method. We will generate
+random number in a square of radius 2 unit; x = (-1, 1) and y = (-1, 1). We will
+count how many points are inside the circle of radius 1 unit. Area of the square
+= 4 square unit, while the are of circle is $\pi$ (unit radius circle). Use this
+ratio to approximate the value of $\pi$.
+
+import CodeBlock from '@theme/CodeBlock';
+import monte_carlo_pi from '!!raw-loader!/src/20_monte_carlo_pi.f90';
+
+<CodeBlock language="fortran" title="src/20_monte_carlo_pi.f90" showLineNumbers>{monte_carlo_pi}</CodeBlock>
