@@ -21,6 +21,7 @@ module.exports = {
         "hypotenuse",
         "integration",
         "haversine",
+        "inner-product",
       ],
     },
     "resources",

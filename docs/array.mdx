@@ -19,7 +19,10 @@ Dynamic array allocation with ALLOCATABLE:
 INTEGER, DIMENSION(:), ALLOCATABLE :: a
 INTEGER i
 a = [(i, i = 1, 10)]
+DEALLOCATE(a)
 ```
+
+See dynamic array allocation in [this example](inner-product).
 
 Assign high dimensional array with RESHAPE:
 ```fortran

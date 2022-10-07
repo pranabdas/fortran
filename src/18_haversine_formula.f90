@@ -4,8 +4,8 @@
 ! test: BNA(36.12,-86.67), LAX(33.94,-118.40), Distance 2889.6612 km
 PROGRAM haversine_formula
     IMPLICIT NONE
-    INTEGER, PARAMETER :: DP = KIND(1.0d0)
-    REAL(DP), PARAMETER :: RADIUS_OF_EARTH = 6.3781d6
+    INTEGER, PARAMETER :: DP = KIND(1.0D0)
+    REAL(DP), PARAMETER :: RADIUS_OF_EARTH = 6.3781D6
 
     REAL(DP) :: lat1 = 0.0_DP
     REAL(DP) :: lon1 = 0.0_DP
@@ -38,10 +38,10 @@ CONTAINS
     FUNCTION deg2rad(degree) RESULT(rad)
         ! degrees to radians
         REAL(KIND=KIND(0.0D0)), INTENT(IN) :: degree
-        REAL(KIND=KIND(0.0D0)), PARAMETER :: deg_to_rad = atan(1.0)/45
+        REAL(KIND=KIND(0.0D0)), PARAMETER :: deg_to_rad = ATAN(1.0) / 45
         REAL(KIND=KIND(0.0D0)) :: rad
 
-        rad = degree*deg_to_rad
+        rad = degree * deg_to_rad
     END FUNCTION deg2rad
 
 END PROGRAM haversine_formula
