@@ -1,0 +1,24 @@
+---
+title: Recursion
+---
+Ordinary FORTRAN procedures (subroutine and function) are not recursive, i.e.,
+they cannot invoke themselves in their body. We can use the `RECURSIVE` keyword
+to implement recursive procedures.
+
+## Recursive subroutine
+
+Calculate factorial using recursive subroutine:
+
+import CodeBlock from '@theme/CodeBlock';
+import recursive_subroutine from '!!raw-loader!/src/21_recursive_subroutine.f90';
+
+<CodeBlock language="fortran" title="src/21_recursive_subroutine.f90" showLineNumbers>{recursive_subroutine}</CodeBlock>
+
+
+## Recursive function
+
+Calculate fibonacci series using recursive function:
+
+import recursive_function from '!!raw-loader!/src/21_recursive_function.f90';
+
+<CodeBlock language="fortran" title="src/21_recursive_function.f90" showLineNumbers>{recursive_function}</CodeBlock>

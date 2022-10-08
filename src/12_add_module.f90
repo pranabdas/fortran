@@ -6,7 +6,7 @@ MODULE add_module
 
   PUBLIC :: read_inputs, add_numbers, print_result
 
-  CONTAINS
+CONTAINS
 
   SUBROUTINE read_inputs()
     PRINT "(a,$)", "Input1 = "

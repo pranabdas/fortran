@@ -9,6 +9,7 @@ module.exports = {
     "file",
     "modules",
     "procedures",
+    "recursion",
     {
       type: "category",
       label: "Coding practice",
