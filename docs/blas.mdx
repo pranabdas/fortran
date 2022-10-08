@@ -1,0 +1,40 @@
+---
+title: Basic Linear Algebra Subroutine
+sidebar_label: BLAS
+---
+Install [BLAS](https://netlib.org/blas/) and [LAPACK](
+https://netlib.org/lapack/) libraries:
+```bash
+apt install blaslib-dev lapacklib-dev
+
+# compile program
+gfortran filename.f90 -lblas
+
+# in case libs are not in system path
+gfortran filename.f90 -L/usr/lib -lblas
+```
+
+## Scaler product (`SDOT`)
+
+import CodeBlock from '@theme/CodeBlock';
+import blas_sdot from '!!raw-loader!/src/22_blas_sdot.f90';
+
+<CodeBlock language="fortran" title="src/22_blas_sdot.f90" showLineNumbers>{blas_sdot}</CodeBlock>
+
+## Matrix multiplication (`DGEMM`)
+
+`DGEMM` calculates the product of double precision matrices:
+
+$$
+C \Leftarrow \alpha A \ast B + \beta C
+$$
+
+import blas_dgemm from '!!raw-loader!/src/22_blas_dgemm.f90';
+
+<CodeBlock language="fortran" title="src/22_blas_dgemm.f90" showLineNumbers>{blas_dgemm}</CodeBlock>
+
+## Resources
+
+- <a target="_blank"
+href={require('/resources/multiplying-matrices-using-dgemm.pdf').default}>
+Multiplying matrices: Intel MKL example</a>

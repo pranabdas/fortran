@@ -25,6 +25,7 @@ module.exports = {
         "inner-product",
         "monte-carlo-pi",
         "monte-carlo-integration",
+        "blas"
       ],
     },
     "resources",
