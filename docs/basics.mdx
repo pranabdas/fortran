@@ -106,12 +106,46 @@ character(len=20) :: name
 real, parameter :: pi = 3.14159
 ```
 
-Setting double precision:
+### KIND type parameter
+
+The KIND type parameters supported by GNU Fortran for the primitive data types
+are:
+
+INTEGER
+1, 2, 4, 8<sup>†</sup>, 16<sup>†</sup>, default: 4<sup>‡</sup>
+
+LOGICAL
+1, 2, 4, 8<sup>†</sup>, 16<sup>†</sup>, default: 4<sup>‡</sup>
+
+REAL
+4, 8, 10<sup>†</sup>, 16<sup>†</sup>, default: 4<sup>§</sup>
+
+COMPLEX
+4, 8, 10<sup>†</sup>, 16<sup>†</sup>, default: 4<sup>§</sup>
+
+DOUBLE PRECISION
+4, 8, 10<sup>†</sup>, 16<sup>†</sup>, default: 8<sup>§</sup>
+
+CHARACTER
+1, 4, default: 1
+
+† not available on all systems 
+‡ unless `-fdefault-integer-8` is used 
+§ unless `-fdefault-real-8` is used
+
+The `KIND` value matches the storage size in bytes, except for `COMPLEX` where
+the storage size is twice as much (or both real and imaginary part are a real
+value of the given size). It is recommended to use the `SELECTED_CHAR_KIND`,
+`SELECTED_INT_KIND` and `SELECTED_REAL_KIND` intrinsics or the `INT8`, `INT16`,
+`INT32`, `INT64`, `REAL32`, `REAL64`, and `REAL128` parameters.
+
+Examples of setting double precision:
 ```fortran
 REAL(KIND=KIND(0.0D0)), PARAMETER :: pi =  4 * ATAN(1.0D0)
 
-! or
-REAL(KIND=SELECTED_REAL_KIND(12)), PARAMETER :: pi =  4 * ATAN(1.0D0)
+! or specify decimal precision and exponent range
+REAL(KIND=SELECTED_REAL_KIND(12, 200)), PARAMETER :: pi =  4 * ATAN(1.0D0)
+PRINT *, PRECISION(pi), RANGE(pi)
 
 ! type conversion
 REAL(KIND=KIND(0.0D0)) :: x
@@ -119,7 +153,7 @@ INTEGER :: y
 y = 1
 x = REAL(y, KIND=KIND(0.0D0))
 
-! integer with 12 significant digits
+! integer with range -10^(12) to 10^(12)
 INTEGER(KIND=SELECTED_INT_KIND(12)) :: large_int
 ```
 
@@ -158,3 +192,26 @@ sqrt      | square root
 exp       | exponential
 log       | natural logarithm
 log10     | common logarithm
+
+### Reading multiple inputs
+
+```fortran
+INTEGER :: M, N
+
+PRINT '(A,$)', "Enter matrix dimensions: "
+! inputs must be separated by at least one blank character or comma 
+READ *, M, N
+```
+
+### Formatting output
+
+```fortran
+PRINT "(f5.1, es9.1, a, i4)", 3.5, 1.4e4, " and ", 12
+PRINT "(2(i4))", 12, 8 ! same as "(i4, i4)" or "(2i4)"
+
+! line breaks
+PRINT "(a, /, a)", "first line", "second line" ! two line breaks 2/
+
+! tab separator, second number will be printed in the position 10-13
+PRINT "(i4, t10, i4)", 3, 5
+```

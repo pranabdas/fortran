@@ -33,7 +33,7 @@ PROGRAM MAIN
 
     CALL DGEMM('N','N', M, N, K, ALPHA, A, M, B, K, BETA, C, M)
 
-    ! print matrix c
+    ! print matrix C
     DO I = 1, M
         DO J = 1, N
           PRINT *, "C(", I, ",", J, ") =", C(I,J)

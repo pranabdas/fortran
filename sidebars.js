@@ -6,6 +6,7 @@ module.exports = {
     "control",
     "loop",
     "complex",
+    "types",
     "file",
     "modules",
     "procedures",
@@ -18,6 +19,7 @@ module.exports = {
         type: "generated-index",
       },
       items: [
+        "swap",
         "abs-path",
         "hypotenuse",
         "integration",
@@ -25,7 +27,10 @@ module.exports = {
         "inner-product",
         "monte-carlo-pi",
         "monte-carlo-integration",
-        "blas"
+        "time",
+        "arg-parsing",
+        "exec-command",
+        "blas",
       ],
     },
     "resources",

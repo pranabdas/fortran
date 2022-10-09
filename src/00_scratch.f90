@@ -20,4 +20,10 @@ PROGRAM scratch
   DO i = 1, 2
     PRINT *, a(i, :)
   END DO
+
+  PRINT "(f5.1, es9.1, a, i4)", 3.5, 1.4e4, " and ", 12
+  PRINT "(2(i4))", 12, 8
+  PRINT "(a, /, a)", "first line", "second line"
+  PRINT "(i4, t10, i4)", 3, 5
+
 END PROGRAM scratch
