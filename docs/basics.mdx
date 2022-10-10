@@ -111,27 +111,22 @@ real, parameter :: pi = 3.14159
 The KIND type parameters supported by GNU Fortran for the primitive data types
 are:
 
-INTEGER
-1, 2, 4, 8<sup>†</sup>, 16<sup>†</sup>, default: 4<sup>‡</sup>
+**INTEGER:** 1, 2, 4, 8<sup>†</sup>, 16<sup>†</sup> (default 4<sup>‡</sup>)
 
-LOGICAL
-1, 2, 4, 8<sup>†</sup>, 16<sup>†</sup>, default: 4<sup>‡</sup>
+**LOGICAL:** 1, 2, 4, 8<sup>†</sup>, 16<sup>†</sup> (default 4<sup>‡</sup>)
 
-REAL
-4, 8, 10<sup>†</sup>, 16<sup>†</sup>, default: 4<sup>§</sup>
+**REAL:** 4, 8, 10<sup>†</sup>, 16<sup>†</sup> (default 4<sup>§</sup>)
 
-COMPLEX
-4, 8, 10<sup>†</sup>, 16<sup>†</sup>, default: 4<sup>§</sup>
+**COMPLEX:** 4, 8, 10<sup>†</sup>, 16<sup>†</sup> (default 4<sup>§</sup>)
 
-DOUBLE PRECISION
-4, 8, 10<sup>†</sup>, 16<sup>†</sup>, default: 8<sup>§</sup>
+**DOUBLE PRECISION:** 4, 8, 10<sup>†</sup>, 16<sup>†</sup> (default 
+8<sup>§</sup>)
 
-CHARACTER
-1, 4, default: 1
+**CHARACTER:** 1, 4 (default 1)
 
-† not available on all systems 
-‡ unless `-fdefault-integer-8` is used 
-§ unless `-fdefault-real-8` is used
+† not available on all systems <br />
+‡ unless `-fdefault-integer-8` is used <br />
+§ unless `-fdefault-real-8` is used <br />
 
 The `KIND` value matches the storage size in bytes, except for `COMPLEX` where
 the storage size is twice as much (or both real and imaginary part are a real
@@ -210,8 +205,8 @@ PRINT "(f5.1, es9.1, a, i4)", 3.5, 1.4e4, " and ", 12
 PRINT "(2(i4))", 12, 8 ! same as "(i4, i4)" or "(2i4)"
 
 ! line breaks
-PRINT "(a, /, a)", "first line", "second line" ! two line breaks 2/
+PRINT "(a, /, a)", "first line", "second line" ! two line breaks: 2/
 
-! tab separator, second number will be printed in the position 10-13
+! tab editor, second number will be printed in the position 10-13
 PRINT "(i4, t10, i4)", 3, 5
 ```
