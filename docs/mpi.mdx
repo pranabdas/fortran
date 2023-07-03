@@ -1,0 +1,30 @@
+---
+title: Message Passing Interface (MPI) Basics
+sidebar_label: MPI Basics
+---
+
+## MPI Hello World
+
+import CodeBlock from '@theme/CodeBlock';
+import MPI_hello_world from '!!raw-loader!/src/29_MPI_hello_world.f90';
+
+<CodeBlock language="fortran" title="src/29_MPI_hello_world.f90" showLineNumbers>{MPI_hello_world}</CodeBlock>
+
+Compile the code:
+
+```bash
+mpif90 29_MPI_hello_world.f90 -o 29_MPI_hello_world.out
+
+# if you are using intel compiler
+mpiifort 29_MPI_hello_world.f90 -o 29_MPI_hello_world.out
+```
+
+Let's run on 4 processors:
+
+```bash
+mpirun -np 4 ./29_MPI_hello_world.out
+```
+
+## Resources
+
+- <https://curc.readthedocs.io/en/latest/programming/MPI-Fortran.html>

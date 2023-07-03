@@ -32,6 +32,7 @@ module.exports = {
         "arg-parsing",
         "exec-command",
         "blas",
+        "mpi",
       ],
     },
     "resources",

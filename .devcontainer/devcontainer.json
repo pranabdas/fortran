@@ -47,7 +47,10 @@
 					"editorRuler.foreground": "#fdb88056"
 				},
 				"workbench.colorTheme": "Dracula At Night",
-				"terminal.integrated.fontSize": 13
+				"terminal.integrated.fontSize": 13,
+				"cSpell.enableFiletypes": [
+				  "mdx"
+				]
 			}
 		}
 	},
