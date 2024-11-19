@@ -1,5 +1,4 @@
 # https://github.com/github/linguist/blob/master/docs/overrides.md
-babel.config.js linguist-documentation=true
 docusaurus.config.js linguist-documentation=true
 sidebars.js linguist-documentation=true
 src/css/custom.css linguist-documentation=true
