@@ -6,11 +6,11 @@ keywords: ["fortran programming", "scientific programming", "numerical programmi
 ---
 
 FORTRAN is optimized for high performance scientific computing. I will be
-working on UNIX/ Linux machine for running codes. If you are on Windows, you may
-consider using [WSL](https://docs.microsoft.com/en-us/windows/wsl/). We will be
-using [gfortran](https://gcc.gnu.org/fortran/) compiler.
+working on UNIX/<wbr/>Linux machine for running codes. If you are on Windows,
+you may consider using [WSL](https://docs.microsoft.com/en-us/windows/wsl/). We
+will be using [gfortran](https://gcc.gnu.org/fortran/) compiler.
 
-To install gcc and gfortran in Ubuntu/ Debian:
+To install gcc and gfortran in Ubuntu/<wbr/>Debian:
 ```bash
 sudo apt install gcc gfortran
 ```
