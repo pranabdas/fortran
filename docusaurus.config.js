@@ -54,7 +54,6 @@ const config = {
               {
                 label: "Fortran Programming",
                 to: "/",
-                target: "_self",
               },
               {
                 label: "~ ~ ~ Other Docs ~ ~ ~",
