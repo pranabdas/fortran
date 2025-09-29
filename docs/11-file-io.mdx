@@ -14,7 +14,9 @@ import file_write from '!!raw-loader!/src/08_file_write.f90';
 :::info
 
 Note that `unit=0, 5, and 6` are reserved. Do not use them to identify files in
-your programs.
+your programs. Some older compilers might other other low unit numbers for
+internal usage. It is safer and conventional to use unit number 10 and above for
+user files.
 
 :::
 
