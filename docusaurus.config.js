@@ -10,11 +10,15 @@ const config = {
   url: site_url,
   baseUrl: "/fortran/", // must have a trailing "/"
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
   organizationName: "pranabdas", // Usually your GitHub org/user name.
   projectName: "fortran", // Usually your repo name.
   titleDelimiter: "•",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
