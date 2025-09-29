@@ -11,7 +11,7 @@ module.exports = {
     "recursion",
     "types",
     "pointer",
-    "file",
+    "file-io",
     {
       type: "category",
       label: "Coding practice",

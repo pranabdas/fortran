@@ -119,7 +119,7 @@ are:
 
 **COMPLEX:** 4, 8, 10<sup>†</sup>, 16<sup>†</sup> (default 4<sup>§</sup>)
 
-**DOUBLE PRECISION:** 4, 8, 10<sup>†</sup>, 16<sup>†</sup> (default 
+**DOUBLE PRECISION:** 4, 8, 10<sup>†</sup>, 16<sup>†</sup> (default
 8<sup>§</sup>)
 
 **CHARACTER:** 1, 4 (default 1)
@@ -142,11 +142,18 @@ REAL(KIND=KIND(0.0D0)), PARAMETER :: pi =  4 * ATAN(1.0D0)
 REAL(KIND=SELECTED_REAL_KIND(12, 200)), PARAMETER :: pi =  4 * ATAN(1.0D0)
 PRINT *, PRECISION(pi), RANGE(pi)
 
-! type conversion
+! Explicit type conversion, preferred for clarity
 REAL(KIND=KIND(0.0D0)) :: x
 INTEGER :: y
 y = 1
 x = REAL(y, KIND=KIND(0.0D0))
+
+! implicit type conversion
+INTEGER, PARAMETER :: DP = selected_real_kind(14, 200)
+REAL(KIND=DP) :: x
+INTEGER :: y
+y = 1
+x = y  ! implicit type conversion will happen
 
 ! integer with range -10^(12) to 10^(12)
 INTEGER(KIND=SELECTED_INT_KIND(12)) :: large_int
@@ -194,7 +201,7 @@ log10     | common logarithm
 INTEGER :: M, N
 
 PRINT '(A,$)', "Enter matrix dimensions: "
-! inputs must be separated by at least one blank character or comma 
+! inputs must be separated by at least one blank character or comma
 READ *, M, N
 ```
 

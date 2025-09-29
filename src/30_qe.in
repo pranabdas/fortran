@@ -1,0 +1,7 @@
+&SYSTEM
+    ibrav   = 2
+    nat     = 2
+    ntyp    = 1
+    ecutwfc = 30.0
+    ecutrho = 240.0
+/
