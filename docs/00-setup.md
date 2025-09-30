@@ -41,7 +41,7 @@ gfortran source.f90 -o XYapp
 
 If you have dependent modules in separate source files, you need to compile the
 modules first followed by main program with linking module `.o` file. More on
-this on the [modules](./modules.mdx) section.
+this on the [modules](./05-modules.mdx) section.
 
 ```bash
 gfortran -c module.f90

@@ -1,0 +1,56 @@
+---
+title: File Input/Output
+sidebar_label: File I/O
+keywords: ["namelist", "fortran namelist", "file I/O", "file read write", "file input output"]
+---
+import CodeBlock from '@theme/CodeBlock';
+
+Here we will generate some data and write it to a file:
+
+import file_write from '!!raw-loader!/src/08_file_write.f90';
+
+<CodeBlock language="fortran" title="src/08_file_write.f90" showLineNumbers>{file_write}</CodeBlock>
+
+:::info
+
+Note that `unit=0`, `5`, and `6` are reserved. Do not use them to identify files
+in your programs. Some older compilers might other other low unit numbers for
+internal usage. It is safer and conventional to use unit number 10 and above for
+user files.
+
+:::
+
+Reading from file: we will read the data from file that is generated in the
+above example.
+
+import file_read from '!!raw-loader!/src/09_file_read.f90';
+
+<CodeBlock language="fortran" title="src/09_file_read.f90" showLineNumbers>{file_read}</CodeBlock>
+
+
+## FORTRAN Namelist
+
+FORTRAN Namelist provides an easy way to read and write groups of variables.
+Namelists simplify reading and writing variables to files without needing to
+specify variable formats for each I/O operation. The namelist group is defined
+in the Fortran code, and the corresponding input/output text uses a specific
+format:
+- Begins with `&groupname`
+- Lists variable assignments (comma or space separated)
+- Ends with `/`.
+
+### Namelist example
+Namelists are used in [Quantum ESPRESSO input files](
+https://pranabdas.github.io/espresso/hands-on/scf).
+
+Here is an example namelist:
+
+import qe_in from '!!raw-loader!/src/30_qe.in';
+
+<CodeBlock language="fortran" title="src/30_qe.in" showLineNumbers>{qe_in}</CodeBlock>
+
+We can read and parse various inputs following way:
+
+import read_namelist from '!!raw-loader!/src/30_namelist.f90';
+
+<CodeBlock language="fortran" title="src/30_namelist.f90" showLineNumbers>{read_namelist}</CodeBlock>
