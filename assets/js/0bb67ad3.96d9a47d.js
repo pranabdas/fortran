@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfortran_programing=self.webpackChunkfortran_programing||[]).push([["5695"],{3676(a){a.exports=JSON.parse('{"metadata":{"permalink":"/fortran/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":0,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
